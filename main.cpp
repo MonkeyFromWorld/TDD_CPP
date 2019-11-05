@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstring>
-#include <cstdio>
+#include <stdio.h>
 #include <cstdlib>
 #include <iomanip>
 #include "range.h"
@@ -21,10 +21,11 @@ static int test_pass = 0;
         }\
     } while(0)
 
-#define EXPECT_EQ_STR(expect, actual) EXPECT_EQ_BASE((strcmp(expect, actual) == 0), expect, actual, "%s")
+#define EXPECT_EQ_STR(expect, actual) EXPECT_EQ_BASE((expect) == (actual) , expect, actual, "%s")
 
 static void test_str_null() {
-    EXPECT_EQ_STR("aa", "a");
+    EXPECT_EQ_STR(LEPT_EQUAL, strcmp("aa", "aa") == 0);
+    EXPECT_EQ_STR(LEPT_UNEQUAL, strcmp("aa", "a") == 0);
 }
 
 static void test() {

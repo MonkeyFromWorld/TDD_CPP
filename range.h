@@ -5,6 +5,7 @@
 #ifndef TDD_CPP_RANGE_H
 #define TDD_CPP_RANGE_H
 
+enum { LEPT_UNEQUAL=0, LEPT_EQUAL };
 
 class range {
 
